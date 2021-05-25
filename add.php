@@ -14,6 +14,18 @@
         $MonHoc = $_POST['MonHoc'];
         $GiangVien = $_POST['GiangVien'];
 
+        // Validate address
+    if(empty($MonHoc)){
+        $MonHocErr = "Please enter an MonHoc.";   
+        $valid = false;  
+    } 
+
+    if(empty($GiangVien)){
+        $GiangVienErr = "Please enter an GiangVien.";   
+        $valid = false;  
+    } 
+
+
         // insert data
         if ($valid) {
             $pdo = Database::connect();
